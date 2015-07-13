@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<% if(ie_compatibility){ %><!--[if IE 8]><html class="lt-ie9"><![endif]--><% } %>
+<% if(ie_compatibility){ %><!--[if gt IE 8]><% } %><html><% if(ie_compatibility){ %><![endif]--><% } %>
+<head>
+	<!-- METADATA  -->
+		<title><%= project_title %></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+	<!-- LINKS  -->
+		<link rel="stylesheet" href="assets/<%= stylesheet_name %>.css">
+		<% if(js_type=="2"){ %>
+			<script src="bower_components/snbx/dist/snbx-jquery.min.js"></script>
+		<% }else if(js_type=="1"){ %>
+			<script src="bower_components/snbx/dist/snbx.min.js"></script>
+		<% } %>
+	<% if(ie_compatibility){ %>
+	<!-- IE COMPATIBILITY  -->
+		<!--[if lte IE 9]>
+			<script src="bower_components/snbx/dist/ie-compat.min.js"></script>
+		<![endif]-->
+	<% } %>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="columns <% if(grid_system=="16"){ %>fourteen<% }else if(grid_system=="12"){ %>ten<% } %> offset-by-one">
+			<h1><%= project_title %></h1>
+		</div>
+	</div>
+	<div class="row">
+	<% if(grid_system=="16"){ %>
+		<div class="display one column">
+			One
+		</div>
+		<div class="display two columns">
+			Two
+		</div>
+		<div class="display three columns">
+			Three
+		</div>
+		<div class="display four columns">
+			Testing
+		</div>
+		<div class="display six columns">
+			Just testing
+		</div>
+	<% }else if(grid_system=="12"){ %>
+		<div class="display one column">
+			One
+		</div>
+		<div class="display two columns">
+			Two
+		</div>
+		<div class="display three columns">
+			Three
+		</div>
+		<div class="display six columns">
+			Testing
+		</div>
+	<% } %>
+	</div>
+</div>
+</body>
+</html>

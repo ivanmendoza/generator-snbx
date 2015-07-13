@@ -1,0 +1,56 @@
+/*!
+	<%= project_title %>
+	<%= month %>, <%= year %>.
+*/
+
+// SNBX DEFAULT CONFIGURATION
+// by Iván E. Mendoza (@dic7)
+
+	// FONTS X
+	// Required mixin for core/_snbx.less. 
+	// Just change font family, size and everything else will be fine ;)
+		#fontsx{
+			.base(@size: 1em){ // DEFAULT
+				font:						normal @size verdana, helvetica, arial, sans-serif;
+			}
+			.headings(@size: 2em){ // FOR HEADINGS
+				font:	normal ~"@{size}/.9" 'gill sans', 'Century Gothic', verdana, sans-serif;
+			}
+			.code(@size: 1em){ // FOR CODE (Monospace)
+				font:	normal ~"@{size}/1.5" 'Lucida Console', 'Consolas', 'Courier New', monospace;
+			}
+			.controls(@size: 1em){ // FOR UI CONTROLS (Narrow)
+				font:	normal ~"@{size}/1" tahoma, sans-serif;
+			}
+		}
+	
+	// SNBX
+		// GLOBAL CONFIG
+			@pageMargin:        			1%;
+			@pageMargin_tablet:        		2%;
+			@pageMargin_desktop:        	2%;
+			@columnsMarginLeft: 			2px; // px
+			@columnsMarginLeft_tablet: 		4px; // px
+			@columnsMarginLeft_desktop:		8px; // px
+			@defaulPageMargin:				1em;
+			@images_path: 					"../images";
+			@rdw_mobile_breakpoint_max:		768px;
+			@rdw_tablet_breakpoint_min:		769px;
+			@rdw_tablet_breakpoint_max:		1080px;
+			@rdw_desktop_breakpoint_min:	1081px;
+			@mobile_media_query:			~"(max-width: @{rdw_mobile_breakpoint_max})";
+			@tablet_media_query:			~"(min-width: @{rdw_tablet_breakpoint_min}) and (max-width: @{rdw_tablet_breakpoint_max})";
+			@tablet_and_desktop_media_query:~"(min-width: @{rdw_tablet_breakpoint_min})";
+			@desktop_media_query:			~"(min-width: @{rdw_desktop_breakpoint_min})";
+			
+		// CORE
+			@import "bower_components/snbx/snbx.less";					// SNBX Core (Required... but you can choose which addon want to use below).
+		// ADDONS
+			<% if(grid_system=="16"){ 		%> @import "bower_components/snbx/addons/grid16.less";		// 16 columns grid
+			<% }else if(grid_system=="12"){ %> @import "bower_components/snbx/addons/grid12.less";		// 12 columns grid
+			<% } %>
+			<% for (var addon in addons) { 	%> @import "bower_components/snbx/addons/<%= addons[addon] %>.less";
+			<% } %>
+
+// YOUR IMPORTS OR STYLES
+.display{.display();}

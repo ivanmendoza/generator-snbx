@@ -1,0 +1,8 @@
+{
+  "name": "<%= project_name %>",
+  "version": "0.0.1",
+  "dependencies": {
+    "snbx": "~0.3.3"
+  }
+}
+
