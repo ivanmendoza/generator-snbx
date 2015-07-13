@@ -10,6 +10,9 @@
     "email": "dev@ivanmendoza.net",
     "url": "https://github.com/ivanmendoza"
   },
+  "bugs": {
+    "url": "https://github.com/ivanmendoza/issues"
+  },
   "scripts": {
     "test": "mocha"
   },
